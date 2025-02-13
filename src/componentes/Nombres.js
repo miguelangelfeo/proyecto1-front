@@ -1,20 +1,30 @@
 import React, { useState } from "react";
+import "./ListaNombres.css";
 
 const ListaNombres = () => {
     const [nombre, setNombre] = useState("");
     const [nombres, setNombres] = useState([]);
 
     const guardar = () => {
-        setNombres([...nombres, nombre]);
-        setNombre("");
+        if (nombre.trim() !== "") {
+            setNombres([...nombres, nombre]);
+            setNombre("");
+        }
     };
 
     return (
-        <div>
-            <p>Ingresa un nombre: </p>
-            <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
-            <button onClick={guardar}>Enviar</button>
-            <ul>
+        <div className="contenedor">
+            <div className="formulario">
+                <p>Ingresa un nombre:</p>
+                <input
+                    type="text"
+                    value={nombre}
+                    onChange={(e) => setNombre(e.target.value)}
+                    placeholder="Escribe un nombre..."
+                />
+                <button onClick={guardar}>Enviar</button>
+            </div>
+            <ul className="lista-nombres">
                 {nombres.map((elemento, index) => (
                     <li key={index}>{elemento}</li>
                 ))}

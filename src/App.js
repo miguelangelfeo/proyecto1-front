@@ -1,5 +1,5 @@
 import React from "react";
-import Nombres from "./componentes/Nombres"; // Asegúrate de que la ruta es correcta
+import Nombres from "./componentes/Nombres";
 
 function App() {
   return (
