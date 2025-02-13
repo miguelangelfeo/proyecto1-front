@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ListaNombres.css";
+import "./Nombres.css";
 
 const ListaNombres = () => {
     const [nombre, setNombre] = useState("");
