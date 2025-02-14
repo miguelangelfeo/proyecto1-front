@@ -1,10 +1,15 @@
 import React from "react";
 import Nombres from "./componentes/Nombres";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-      <Nombres />
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Nombres />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
