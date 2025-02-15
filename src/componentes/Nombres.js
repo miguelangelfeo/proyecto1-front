@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_URL = "/backend"; // URL base para las peticiones al backend
+const API_URL = "/backend/datos"; // URL base para las peticiones al backend
 
 const ListaNombres = () => {
     const [nombre, setNombre] = useState("");
