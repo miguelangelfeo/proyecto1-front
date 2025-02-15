@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+const API_URL = "/backend"; // URL base para las peticiones al backend
+
 const ListaNombres = () => {
     const [nombre, setNombre] = useState("");
     const [nombres, setNombres] = useState([]);
@@ -9,9 +11,10 @@ const ListaNombres = () => {
     useEffect(() => {
         cargarNombres();
     }, []);
+
     const cargarNombres = async () => {
         try {
-            const response = await axios.get("http:/104.248.106.174/backend/nombres-bd");
+            const response = await axios.get(`${API_URL}/nombres-bd`);
             setNombres(response.data);
         } catch (error) {
             console.error("Error al obtener los nombres", error);
@@ -21,14 +24,13 @@ const ListaNombres = () => {
     const guardar = async () => {
         if (nombre.trim() === "") return;
         try {
-            await axios.post("http:/104.248.106.174/backend/nombre", { nombre });
+            await axios.post(`${API_URL}/nombre`, { nombre });
             setNombre("");
             cargarNombres();
         } catch (error) {
             console.error("Error al guardar el nombre", error);
         }
     };
-
 
     return (
         <div>
