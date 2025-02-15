@@ -14,7 +14,7 @@ const ListaNombres = () => {
 
     const cargarNombres = async () => {
         try {
-            const response = await axios.get(`${API_URL}/nombres-bd`);
+            const response = await axios.get(`${API_URL}`);
             setNombres(response.data);
         } catch (error) {
             console.error("Error al obtener los nombres", error);
@@ -24,7 +24,7 @@ const ListaNombres = () => {
     const guardar = async () => {
         if (nombre.trim() === "") return;
         try {
-            await axios.post(`${API_URL}/nombre`, { nombre });
+            await axios.post(`${API_URL}`, { nombre });
             setNombre("");
             cargarNombres();
         } catch (error) {
