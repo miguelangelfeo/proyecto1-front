@@ -21,7 +21,7 @@ const ListaNombres = () => {
     const guardar = async () => {
         if (nombre.trim() === "") return;
         try {
-            await axios.post("http://104.248.106.174/api/nombre", { nombre });
+            await axios.post("http://104.248.106.174/backend/api/nombre", { nombre });
             setNombre("");
             cargarNombres();
         } catch (error) {
