@@ -11,7 +11,7 @@ const ListaNombres = () => {
     }, []);
     const cargarNombres = async () => {
         try {
-            const response = await axios.get("http://104.248.106.174/api/nombres-bd");
+            const response = await axios.get("http://104.248.106.174/backend/api/nombres-bd");
             setNombres(response.data);
         } catch (error) {
             console.error("Error al obtener los nombres", error);
